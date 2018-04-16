@@ -4,7 +4,8 @@ import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
 export const registerUser = user => dispatch => {
-    return fetch(`${API_BASE_URL}/users`, {
+    console.log(user);
+    return fetch(`${API_BASE_URL}/users/register`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
