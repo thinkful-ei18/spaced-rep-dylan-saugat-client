@@ -38,7 +38,7 @@ export class Dashboard extends React.Component {
 
   renderNextButton() {
     return (
-      <button onClick={() => this.props.dispatch(fetchProtectedData())}>
+      <button type="button" onClick={() => this.props.dispatch(fetchProtectedData())}>
         NEXT!
       </button>
     );
