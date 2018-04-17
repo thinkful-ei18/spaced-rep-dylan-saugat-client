@@ -1,0 +1,27 @@
+.landing-page{
+  margin: 0 auto;
+  text-align: center;
+}
+
+.landing-page h2 {
+  background-color: #97CAEF;
+  padding: 25px;
+  margin: 0;
+  font-size: 30px;
+}
+.app-info{
+ background-color: #E27D60;
+ padding: 20px;
+}
+.app-info h5{
+  padding-top: 20px;
+  font-size: 24px;
+}
+
+.app-info p {
+  font-size: 25px;
+}
+
+.app-info img {
+  width: 100px;
+}

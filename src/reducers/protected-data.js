@@ -1,6 +1,7 @@
 import {
   FETCH_PROTECTED_DATA_SUCCESS,
   FETCH_PROTECTED_DATA_ERROR,
+  VERIFY_ANSWER_REQUEST,
   VERIFY_ANSWER_SUCCESS,
   VERIFY_ANSWER_ERROR
 } from '../actions/protected-data';
@@ -8,11 +9,13 @@ import {
 const initialState = {
   data: [],
   error: null,
-  feedback: null
+  feedback: {},
+  loading: null
 };
 
 export default function reducer(state = initialState, action) {
   if (action.type === FETCH_PROTECTED_DATA_SUCCESS) {
+    console.log(action.data)
     return Object.assign({}, state, {
       data: action.data[0],
       error: null
@@ -21,6 +24,11 @@ export default function reducer(state = initialState, action) {
     return Object.assign({}, state, {
       error: action.error
     });
+  } else if (action.type === VERIFY_ANSWER_REQUEST) {
+    return Object.assign({}, state, {
+      loading: true
+    });
+  
   } else if (action.type === VERIFY_ANSWER_SUCCESS) {
     return Object.assign({}, state, {
       feedback: action.data

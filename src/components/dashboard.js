@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './Login/Requires-login';
 import { Field } from 'redux-form';
-import { Line, Circle } from 'rc-progress';
+import { Circle } from 'rc-progress';
 import {
   fetchProtectedData,
   verifyAnswerStatus
@@ -23,28 +23,31 @@ export class Dashboard extends React.Component {
     e.preventDefault();
     this.props.dispatch(
       verifyAnswerStatus({
-        answer: this.props.currentAnswer,
-        id: this.props.protectedData.id
+        answer: this.props.currentAnswer
       })
-    );
-    this.handleProgressBar();
+    )
+    .then(() => this.handleProgressBar())
+    .then(() =>  this.props.dispatch(fetchProtectedData()))
+    .catch(err => console.log(err));
   };
 
   handleAnswerInput = (e) => {
     this.props.dispatch(setAnswer(e.target.value))
   }
 
-  handleProgressBar = () => {
-    //   if(this.state.feedback.correctAttempts){
-    //       return correctAttempts
-    //   }
+  renderNextButton(){
+      return(<button onClick={ () => this.props.dispatch(fetchProtectedData())}>NEXT!</button>);
+  }
 
+  handleProgressBar = () => {
+   
     let currentProgress = this.state.currentProgress;
+
+    if(this.props.feedback.feedback === "Correct"){    
+    this.setState({currentProgress: currentProgress+= 10});
     
-    if(this.props.feedback){
-        console.log('hello')
-        this.setState({currentProgress: currentProgress+=10})
     }
+    
   }
 
   render() {
@@ -53,10 +56,10 @@ export class Dashboard extends React.Component {
         <div className="dashboard-username">
           Username: {this.props.username}
         </div>
-        <div className="dashboard-name">Name: {this.props.name}</div>
+        <div className="dashboard-name">hello</div>
         <div className="dashboard-protected-data">
-          <h4>{this.props.protectedData.question}</h4>
-          {console.log(this.props.protectedData.id)}
+          <h4>{this.props.protectedData}</h4>
+          {/* {console.log(this.props.protectedData.id)} */}
           {this.props.feedback? console.log(this.props.feedback.feedback): null}
           <form onSubmit={e => this.answerSubmitHandler(e, this.props.currentAnswer)}>
             <input
@@ -66,6 +69,7 @@ export class Dashboard extends React.Component {
               onChange={this.handleAnswerInput}
             />
             <button type="submit">submit answer</button>
+            {this.props.feedback.feedback === "Correct" ? this.renderNextButton(): null}
           </form>
         </div>
 
@@ -90,6 +94,7 @@ const mapStateToProps = state => {
     name: `${currentUser.firstName} ${currentUser.lastName}`,
     protectedData: state.protectedData.data,
     feedback: state.protectedData.feedback,
+    loadingStatus: state.protectedData.loading,
     currentAnswer: state.game.answer
   };
 };

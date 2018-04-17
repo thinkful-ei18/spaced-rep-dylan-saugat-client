@@ -1,4 +1,4 @@
-import {createStore, applyMiddleware, combineReducers} from 'redux';
+import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
 import {reducer as formReducer} from 'redux-form';
 import thunk from 'redux-thunk';
 import {loadAuthToken} from './local-storage';
@@ -7,6 +7,23 @@ import protectedDataReducer from './reducers/protected-data';
 import gameReducer from './reducers/game';
 import {setAuthToken, refreshAuthToken} from './actions/auth';
 
+const middlewares = [thunk];
+let enhancers;
+
+
+if (process.env.NODE_ENV === 'development') {
+    const { createLogger } = require('redux-logger');
+    middlewares.push(createLogger());
+  
+    enhancers = compose(
+      applyMiddleware(...middlewares),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    );
+  } else {
+    enhancers = applyMiddleware(...middlewares)
+  }
+  
+
 const store = createStore(
     combineReducers({
         form: formReducer,
@@ -14,7 +31,8 @@ const store = createStore(
         protectedData: protectedDataReducer,
         game: gameReducer
     }),
-    applyMiddleware(thunk)
+    {},
+    enhancers
 );
 
 // Hydrate the authToken from localStorage if it exist
