@@ -6,3 +6,11 @@ body {
   margin: 0 auto;
   box-sizing: border-box;
 }
+
+@font-face{ 
+	font-family: 'Dragon Alphabet';
+	src:
+       url('dov3_th9m-webfont.woff') format('woff'),
+       url('dov3_th9m-webfont.woff2') format('woff2'),
+	     url('dov3_th9m-webfont.ttf') format('truetype')
+}
