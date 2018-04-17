@@ -10,7 +10,11 @@ const initialState = {
   data: [],
   error: null,
   feedback: {},
-  loading: null
+  loading: null,
+  session: {
+    attempts: 0,
+    correctAttempts: 0
+  }
 };
 
 export default function reducer(state = initialState, action) {
@@ -18,6 +22,7 @@ export default function reducer(state = initialState, action) {
     console.log(action.data)
     return Object.assign({}, state, {
       data: action.data[0],
+      feedback: {},
       error: null
     });
   } else if (action.type === FETCH_PROTECTED_DATA_ERROR) {
@@ -31,7 +36,8 @@ export default function reducer(state = initialState, action) {
   
   } else if (action.type === VERIFY_ANSWER_SUCCESS) {
     return Object.assign({}, state, {
-      feedback: action.data
+      feedback: action.data,
+      session: {attempts: state.session.attempts + 1, correctAttempts: state.session.correctAttempts + action.answerStatus}
     });
   } else if (action.type === VERIFY_ANSWER_ERROR) {
     return Object.assign({}, state, {

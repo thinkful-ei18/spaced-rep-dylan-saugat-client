@@ -17,7 +17,7 @@ export function LandingPage(props) {
             <Link to="/register">Register</Link>
             <div className="app-info"> <h5>What is Dovahzul?</h5>
             <img className="app-img" src={skyrimLogo} alt="logo"/> 
-            <p className="app-overview">Dovahzul is the native lanaguage used by the dragons of skyrim to communicate. This language was drive to the brink of extincition with only a limited number of existing Dragons using it for powerful magic. The main character in the game is also able to learn parts of the language due to him being a dragonborn. This powerful language allows the speaker to cast powerful shouts and inflict grave damage upon the enemy. You might even discover your secrent status of a dragonborn by learning the shouts. </p>
+            <p className="app-overview">Dovahzul is the native lanaguage used by the dragons of skyrim to communicate. This language was driven to the brink of extinction with only a limited number of existing dragons using it for powerful magic. The main character in the game is also able to learn parts of the language due to him being a dragonborn. This powerful language allows the speaker to cast powerful shouts and inflict grave damage upon the enemy. You might even discover your secrent status of a dragonborn by learning the shouts. </p>
             </div>
            
             </div>

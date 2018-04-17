@@ -20,9 +20,10 @@ export const verifyAnswerRequest= () => ({
 });
 
 export const VERIFY_ANSWER_SUCCESS = 'VERIFY_ANSWER_SUCCESS';
-export const verifyAnswerSuccess = data => ({
+export const verifyAnswerSuccess = (data, answerStatus) => ({
   type: VERIFY_ANSWER_SUCCESS,
-  data
+  data,
+  answerStatus
 });
 
 export const VERIFY_ANSWER_ERROR = 'VERIFY_ANSWER_ERROR';
@@ -66,8 +67,12 @@ dispatch(verifyAnswerRequest())
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .then(data => {
-      console.log(data);
-      dispatch(verifyAnswerSuccess(data));
+      if(data.feedback === "Correct"){
+      dispatch(verifyAnswerSuccess(data,1));
+      }
+      else {
+      dispatch(verifyAnswerSuccess(data,0));
+      }
     })
     .catch(err => {
       dispatch(verifyAnswerError(err));
