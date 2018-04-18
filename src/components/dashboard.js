@@ -65,7 +65,7 @@ export class Dashboard extends React.Component {
           <h5>{feedback.feedback}</h5>
           {/* {console.log(this.props.protectedData.id)} */}
           <form onSubmit={e => this.answerSubmitHandler(e, this.props.currentAnswer)}>
-            <input className="answer-input" type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />
+           { feedback === this.props.feedback ? null : <input className="answer-input" type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} /> }
             {/* {console.log(this.props.feedback.feedback)} */}
             {this.props.feedback.feedback === 'Correct' || this.props.feedback.feedback === 'Incorrect' ? this.renderNextButton() : <button className="submit-btn" type="submit">
                 submit answer
