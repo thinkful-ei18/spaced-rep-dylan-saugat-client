@@ -5,13 +5,51 @@
 .dashboard {
   margin: 0 auto;
   text-align: center;
- 
+  padding-bottom: 15px;
 }
 
-.dashboard-name {
-  
+.dashboard-question {
+  background-color: #E27D60;
+}
+
+.dragon-item{
+font-size: 30px;
+display: inline-block;
+margin: 10px;
+
+padding: 10px;
 }
 
 .dragon {
   font-family: 'Dragon Alphabet';
+  font-size: 40px;
+  margin: 0;
 }
+
+.progress-bar-container, .dashboard img {
+  margin: 0 auto;
+  display: inline-block;
+  width: 25%;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  margin-left: 25px;
+
+}
+
+.answer-input {
+  width: 50%;
+  height: 30px;
+}
+
+.submit-btn{
+  width: 10%;
+  height: 35px;
+  margin-left: 15px;
+  margin-bottom: 25px;
+}
+
+.left-dragon{
+  transform: rotate(180deg);
+  margin-bottom: 50px;
+}
+

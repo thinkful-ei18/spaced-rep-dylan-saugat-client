@@ -9,6 +9,7 @@ import {
 } from '../actions/protected-data';
 import { setAnswer } from '../actions/game';
 import './dashboard.css';
+import dragonImage from './images/dragon.svg'
 export class Dashboard extends React.Component {
   state = {
     currentProgress: 0
@@ -52,41 +53,53 @@ export class Dashboard extends React.Component {
     }
   };
 
+//   dragonItemStyleHandler = () => {
+ 
+//       if(this.props.feedback.feedback === 'Correct'){
+//           dragonItemStyle.borderRight = '4px solid green'
+//       }
+//       else if (this.props.feedback.feedback === 'Incorrect'){
+//         dragonItemStyle.borderRight = '4px solid red'
+//       }
+//       return dragonItemStyle
+//   }
+
   render() {
+       const dragonItemStyle = {
+        'borderRight': '4px solid blue'
+      }
     return <div className="dashboard">
-        <div className="dashboard-username">
-          Username: {this.props.username}
-        </div>
-        <div className="dashboard-name">hello</div>
-        <div className="dashboard-protected-data">
-          <h4>{this.props.protectedData.question}</h4>
+
+        <div className="dashboard-question">
+          <h4 className="dragon-item" style={dragonItemStyle}>{this.props.protectedData.question}</h4>
           <h5 className="dragon">{this.props.protectedData.dragonAnswer}</h5>
-          <h5>Attempts {this.props.protectedData.attempts}</h5>
-          <h5>
+          <h5 className="dragon-item" style={dragonItemStyle} >Attempts {this.props.protectedData.attempts}</h5>
+          <h5 className="dragon-item" style={dragonItemStyle}>
             Correct Attempts {this.props.protectedData.correctAttempts}
           </h5>
-          <h5>
+          <h5 className="dragon-item" style={dragonItemStyle} >
             Percent correct{' '}
-            {this.props.protectedData.correctAttempts /
+            {this.props.protectedData.attempts === 0? 0 :this.props.protectedData.correctAttempts /
               this.props.protectedData.attempts *
               100}%
           </h5>
           {/* {console.log(this.props.protectedData.id)} */}
           <form onSubmit={e => this.answerSubmitHandler(e, this.props.currentAnswer)}>
-            <input type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />
+            <input className="answer-input" type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />
             {/* {console.log(this.props.feedback.feedback)} */}
-            {this.props.feedback.feedback === 'Correct' || this.props.feedback.feedback === 'Incorrect' ? this.renderNextButton() : <button type="submit">
+            {this.props.feedback.feedback === 'Correct' || this.props.feedback.feedback === 'Incorrect' ? this.renderNextButton() : <button className="submit-btn" type="submit">
                 submit answer
               </button>}
           </form>
         </div>
+        <img className="left-dragon" src={dragonImage} alt="dragon"/>
+        <div className="progress-bar-container">
 
-        <div className="progress-bar">
-          {' '}
-          <Circle className="progress-bar" percent={this.props.session.correctAttempts / this.props.session.attempts * 100} strokeWidth="4" strokeColor="green" />
+          <Circle className="progress-" percent={this.props.session.correctAttempts / this.props.session.attempts * 100} strokeWidth="4" strokeColor="green" />
           <h4>{this.props.session.correctAttempts}</h4>
           <h4>{this.props.session.attempts}</h4>
         </div>
+        <img src={dragonImage} alt="dragon"/>
       </div>;
   }
 }
