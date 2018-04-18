@@ -1,0 +1,26 @@
+.info-container{
+margin: 0 auto;
+text-align: center;  
+background-color: #E27D60;
+padding: 20px;
+}
+
+.info-container h1 {
+  font-size: 40px;
+}
+
+.info-container p {
+  font-size: 28px;
+}
+
+.f-pg {
+ display: inline-block;
+ width: 33%;
+}
+
+.info-progression {
+margin-top: 200px;  
+background-color: #97CAEF;
+padding-top: 40px;
+}
+
