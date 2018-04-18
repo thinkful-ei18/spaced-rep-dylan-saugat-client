@@ -1,13 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import requiresLogin from './Login/Requires-login';
-import { Field } from 'redux-form';
 import { Circle } from 'rc-progress';
 import {
   fetchProtectedData,
   verifyAnswerStatus
 } from '../actions/protected-data';
-import { setAnswer } from '../actions/game';
+import { setAnswer, resetGame } from '../actions/game';
 import './dashboard.css';
 import dragonImage from './images/dragon.svg'
 export class Dashboard extends React.Component {
@@ -20,16 +19,14 @@ export class Dashboard extends React.Component {
   }
 
   answerSubmitHandler = (e, answer) => {
-      console.log("Running answer submit handler")
     e.preventDefault();
-    e.target.value = ''
     this.props
       .dispatch(
         verifyAnswerStatus({
           answer: this.props.currentAnswer
         })
       )
-      .then(() => this.handleProgressBar())
+      .then(() => this.props.dispatch(resetGame()))
       .catch(err => console.log(err));
   };
 
@@ -45,13 +42,13 @@ export class Dashboard extends React.Component {
     );
   }
 
-  handleProgressBar = () => {
-    let currentProgress = this.state.currentProgress;
+  // handleProgressBar = () => {
+  //   let currentProgress = this.state.currentProgress;
 
-    if (this.props.feedback.feedback === 'Correct') {
-      this.setState({ currentProgress: (currentProgress += 10) });
-    }
-  };
+  //   if (this.props.feedback.feedback === 'Correct') {
+  //     this.setState({ currentProgress: (currentProgress += 10) });
+  //   }
+  // };
 
 //   dragonItemStyleHandler = () => {
  
@@ -65,6 +62,8 @@ export class Dashboard extends React.Component {
 //   }
 
   render() {
+      const feedback = this.props.feedback.feedback ? this.props.feedback : this.props.protectedData;
+
        const dragonItemStyle = {
         'borderRight': '4px solid blue'
       }
@@ -73,16 +72,17 @@ export class Dashboard extends React.Component {
         <div className="dashboard-question">
           <h4 className="dragon-item" style={dragonItemStyle}>{this.props.protectedData.question}</h4>
           <h5 className="dragon">{this.props.protectedData.dragonAnswer}</h5>
-          <h5 className="dragon-item" style={dragonItemStyle} >Attempts {this.props.protectedData.attempts}</h5>
+          <h5 className="dragon-item" style={dragonItemStyle} >Attempts {feedback.attempts}</h5>
           <h5 className="dragon-item" style={dragonItemStyle}>
-            Correct Attempts {this.props.protectedData.correctAttempts}
+            Correct Attempts {feedback.correctAttempts}
           </h5>
           <h5 className="dragon-item" style={dragonItemStyle} >
             Percent correct{' '}
-            {this.props.protectedData.attempts === 0? 0 :this.props.protectedData.correctAttempts /
-              this.props.protectedData.attempts *
+            {feedback.attempts === 0? 0 :feedback.correctAttempts /
+              feedback.attempts *
               100}%
           </h5>
+          <h5>{feedback.feedback}</h5>
           {/* {console.log(this.props.protectedData.id)} */}
           <form onSubmit={e => this.answerSubmitHandler(e, this.props.currentAnswer)}>
             <input className="answer-input" type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />

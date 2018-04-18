@@ -4,4 +4,8 @@ export const setAnswer = (answer) => ({
   answer
 });
 
-
+export const RESET_GAME = 'RESET_GAME';
+export const resetGame = (answer) => ({
+  type: RESET_GAME,
+  answer
+});
