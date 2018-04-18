@@ -5,7 +5,7 @@ import {Route, withRouter} from 'react-router-dom';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
-import RegistrationPage from './Registration/registration-page';
+import RegistrationPage from './Registration/Registration-page';
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {
