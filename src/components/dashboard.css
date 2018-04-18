@@ -36,6 +36,10 @@ padding: 10px;
 
 }
 
+.dashboard-bottom{
+  background-color: #97CAEF;
+}
+
 .answer-input {
   width: 50%;
   height: 30px;

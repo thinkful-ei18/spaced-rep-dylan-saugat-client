@@ -10,9 +10,7 @@ import { setAnswer, resetGame } from '../actions/game';
 import './dashboard.css';
 import dragonImage from './images/dragon.svg'
 export class Dashboard extends React.Component {
-  state = {
-    currentProgress: 0
-  };
+
 
   componentDidMount() {
     this.props.dispatch(fetchProtectedData());
@@ -42,24 +40,6 @@ export class Dashboard extends React.Component {
     );
   }
 
-  // handleProgressBar = () => {
-  //   let currentProgress = this.state.currentProgress;
-
-  //   if (this.props.feedback.feedback === 'Correct') {
-  //     this.setState({ currentProgress: (currentProgress += 10) });
-  //   }
-  // };
-
-//   dragonItemStyleHandler = () => {
- 
-//       if(this.props.feedback.feedback === 'Correct'){
-//           dragonItemStyle.borderRight = '4px solid green'
-//       }
-//       else if (this.props.feedback.feedback === 'Incorrect'){
-//         dragonItemStyle.borderRight = '4px solid red'
-//       }
-//       return dragonItemStyle
-//   }
 
   render() {
       const feedback = this.props.feedback.feedback ? this.props.feedback : this.props.protectedData;
@@ -85,13 +65,14 @@ export class Dashboard extends React.Component {
           <h5>{feedback.feedback}</h5>
           {/* {console.log(this.props.protectedData.id)} */}
           <form onSubmit={e => this.answerSubmitHandler(e, this.props.currentAnswer)}>
-            <input className="answer-input" type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />
+           { feedback === this.props.feedback ? null : <input className="answer-input" type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} /> }
             {/* {console.log(this.props.feedback.feedback)} */}
             {this.props.feedback.feedback === 'Correct' || this.props.feedback.feedback === 'Incorrect' ? this.renderNextButton() : <button className="submit-btn" type="submit">
                 submit answer
               </button>}
           </form>
         </div>
+        <div className="dashboard-bottom">
         <img className="left-dragon" src={dragonImage} alt="dragon"/>
         <div className="progress-bar-container">
 
@@ -100,6 +81,7 @@ export class Dashboard extends React.Component {
           <h4>{this.props.session.attempts}</h4>
         </div>
         <img src={dragonImage} alt="dragon"/>
+        </div>
       </div>;
   }
 }
