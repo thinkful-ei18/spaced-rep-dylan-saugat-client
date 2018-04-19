@@ -7,12 +7,9 @@
   padding: 6px 12px;
   cursor: pointer;
   margin-top: 10px;
-<<<<<<< HEAD
   font-weight: bold;
-=======
   padding-bottom: 10px;
   float: none;
->>>>>>> f5658223ae3412ef2e69f8026dafdd72feb57caa
 }
 
 .react-tabs__tab--selected {

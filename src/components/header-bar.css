@@ -33,10 +33,13 @@ li .nav-item:hover:not(.active) {
  float: right;
 }
 
-.logout-btn{
+/* .logout-btn{
   height: 25px;
   margin-top: 12px;
-  background-color: #E07D64;
+  background-color: grey;
   border: none;
   font-size: 25px;
+  
 }
+ */
+
