@@ -23,11 +23,11 @@ export function LandingPage(props) {
         </TabList>
 
         <TabPanel>
-          <h2>Register</h2>
+          <h2 className="rg-head">Register</h2>
           <RegistrationForm />
         </TabPanel>
         <TabPanel>
-          <h2>Log In</h2>
+          <h2 className="lg-head">Log In</h2>
           <LoginForm />
         </TabPanel>
       </Tabs>
