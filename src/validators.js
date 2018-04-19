@@ -15,3 +15,12 @@ export const matches = field => (value, allValues) =>
     field in allValues && value.trim() === allValues[field].trim()
         ? undefined
         : 'Does not match';
+export const isEmail = value => {
+  if (
+    !value.match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    )
+  ) {
+    return 'You must supply a valid email address';
+  }
+};

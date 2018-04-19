@@ -25,6 +25,10 @@ li .nav-item:hover:not(.active) {
   background-color: #D3D3D3;
 }
 
+li .nav-item:focus {
+  background-color: #D3D3D3;
+}
+
 .active {
   background-color: #6A5ACD;
 }
@@ -33,13 +37,10 @@ li .nav-item:hover:not(.active) {
  float: right;
 }
 
-/* .logout-btn{
-  height: 25px;
-  margin-top: 12px;
+.logout-button{
   background-color: grey;
   border: none;
-  font-size: 25px;
-  
+  font-size: 20px;
 }
- */
+
 

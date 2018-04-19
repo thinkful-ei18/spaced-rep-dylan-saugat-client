@@ -3,7 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../../actions/users';
 import {login} from '../../actions/auth';
 import Input from '../Login/Input';
-import {required, nonEmpty, matches, length, isTrimmed} from '../../validators';
+import {required, nonEmpty, matches, length, isTrimmed, isEmail} from '../../validators';
 import './registration_form.css';
 const passwordLength = length({min: 10, max: 72});
 const matchesPassword = matches('password');
@@ -18,44 +18,17 @@ export class RegistrationForm extends React.Component {
     }
 
     render() {
-        return (
-            <form
-                className="login-form"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
-                <Field className="input" component={Input} type="text" name="email" label="Email" />
-               
-                <Field
-                    className="input"
-                    label="Display Name"
-                    component={Input}
-                    type="text"
-                    name="displayName"
-                    validate={[required, nonEmpty, isTrimmed]}
-                />
-                <Field
-                    component={Input}
-                    type="password"
-                    name="password"
-                    label="Password"
-                    validate={[required, passwordLength, isTrimmed]}
-                />
-                <Field
-                    component={Input}
-                    type="password"
-                    label="Confirm Password"
-                    name="passwordConfirm"
-                    validate={[required, nonEmpty, matchesPassword]}
-                />
-             
-                <button
-                    type="submit"
-                    >
-                    Register
-                </button>
-            </form>
-        );
+        return <form className="login-form" onSubmit={this.props.handleSubmit(
+              values => this.onSubmit(values)
+            )}>
+            <Field className="input" component={Input} type="text" name="email" label="Email" validate={[required, nonEmpty, isTrimmed, isEmail]} />
+
+            <Field className="input" label="Display Name" component={Input} type="text" name="displayName" validate={[required, nonEmpty, isTrimmed]} />
+            <Field component={Input} type="password" name="password" label="Password" validate={[required, passwordLength, isTrimmed]} />
+            <Field component={Input} type="password" label="Confirm Password" name="passwordConfirm" validate={[required, nonEmpty, matchesPassword]} />
+
+            <button type="submit">Register</button>
+          </form>;
     }
 }
 

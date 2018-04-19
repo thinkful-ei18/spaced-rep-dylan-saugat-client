@@ -35,6 +35,7 @@ export class Dashboard extends React.Component {
       <button
       className="submit-btn"
         type="button"
+        autoFocus
         onClick={() => this.props.dispatch(fetchProtectedData())}
       >
         NEXT!
@@ -93,7 +94,7 @@ export class Dashboard extends React.Component {
 
           <form onSubmit={e => this.answerSubmitHandler(e, this.props.currentAnswer)}>
             {feedback === this.props.feedback ? null : <label htmlFor="answer" className="dragon-item">
-                Answer<input className="answer-input" type="text" name="answer" title="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />
+                Answer<input autoFocus className="answer-input" type="text" name="answer" title="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />
               </label>}
             {/* {console.log(this.props.feedback.feedback)} */}
             {this.props.feedback.feedback === 'Correct' || this.props.feedback.feedback === 'Incorrect' ? this.renderNextButton() : <button className="submit-btn" type="submit">
