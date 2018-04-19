@@ -7,10 +7,12 @@
   padding: 6px 12px;
   cursor: pointer;
   margin-top: 10px;
+  padding-bottom: 10px;
+  float: none;
 }
 
 .react-tabs__tab--selected {
-  background: #fff;
+  background: rgba(148, 148, 148, 0.644);
   border-color: #aaa;
   color: black;
   border-radius: 5px 5px 0 0;
@@ -37,12 +39,19 @@
 }
 
 .react-tabs__tab-panel--selected {
-  padding-top: 10px;
   display: block;
 }
 
 .rg-head, .lg-head{
 
 text-align: center;
+padding-top: 40px
 
+}
+
+.react-tabs__tab-list {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: #97CAEF;
 }
