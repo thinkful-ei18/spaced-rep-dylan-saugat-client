@@ -3,6 +3,14 @@
   text-align: center;
 }
 
+.landing-page h1 {
+  background-color: #97CAEF;
+  padding: 25px;
+  margin: 0;
+  font-size: 35px;
+ 
+}
+
 .landing-page h2 {
   background-color: #97CAEF;
   padding: 25px;

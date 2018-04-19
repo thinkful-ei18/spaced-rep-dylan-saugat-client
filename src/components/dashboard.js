@@ -69,15 +69,17 @@ export class Dashboard extends React.Component {
         This card is currently at level: 1
       </p>;
     }
-    return <div className="dashboard">
+    return <div className="dashboard" role="main">
         <div className="dashboard-question">
-          <h4 className="dragon-item">
+          <h1 className="dragon-item">
             {this.props.protectedData.question}
-          </h4>
+          </h1>
           <p className="dragon">{this.props.protectedData.dragonAnswer}</p>
           {gameFeedback}
           {correctAnswer}
-          <p className="dragon-item">Attempts on this word: {feedback.attempts}</p>
+          <p className="dragon-item">
+            Attempts on this word: {feedback.attempts}
+          </p>
           <p className="dragon-item">
             Correct Attempts on this word: {feedback.correctAttempts}
           </p>
@@ -90,7 +92,9 @@ export class Dashboard extends React.Component {
           {mValueJSX}
 
           <form onSubmit={e => this.answerSubmitHandler(e, this.props.currentAnswer)}>
-            {feedback === this.props.feedback ? null : <input className="answer-input" type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />}
+            {feedback === this.props.feedback ? null : <label htmlFor="answer" className="dragon-item">
+                Answer<input className="answer-input" type="text" name="answer" title="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />
+              </label>}
             {/* {console.log(this.props.feedback.feedback)} */}
             {this.props.feedback.feedback === 'Correct' || this.props.feedback.feedback === 'Incorrect' ? this.renderNextButton() : <button className="submit-btn" type="submit">
                 submit answer
@@ -101,8 +105,8 @@ export class Dashboard extends React.Component {
           <img className="left-dragon" src={dragonImage} alt="dragon" />
           <div className="progress-bar-container">
             <Circle className="progress-" percent={this.props.session.correctAttempts / this.props.session.attempts * 100} strokeWidth="4" strokeColor="green" />
-            <h4>{this.props.session.correctAttempts}</h4>
-            <h4>{this.props.session.attempts}</h4>
+            <p>{this.props.session.correctAttempts}</p>
+            <p>{this.props.session.attempts}</p>
           </div>
           <img src={dragonImage} alt="dragon" />
         </div>
