@@ -5,11 +5,7 @@ import {Route, withRouter} from 'react-router-dom';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
-<<<<<<< HEAD
-import RegistrationPage from './Registration/Registration-page';
-=======
 import RegistrationPage from './Registration/registration-page';
->>>>>>> 5776ea3b0c4774268a6779c3a675f001a21d3312
 import InfoHome from './InfoHome';
 import {refreshAuthToken} from '../actions/auth';
 

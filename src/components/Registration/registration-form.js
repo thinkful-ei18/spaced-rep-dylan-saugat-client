@@ -25,10 +25,11 @@ export class RegistrationForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 <label htmlFor="email">Email</label>
-                <Field component={Input} type="text" name="email" />
+                <Field className="input" component={Input} type="text" name="email" />
                
                 <label htmlFor="displayName">Display Name</label>
                 <Field
+                     className="input"   
                     component={Input}
                     type="text"
                     name="displayName"

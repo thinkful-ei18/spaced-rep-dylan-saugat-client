@@ -1,0 +1,22 @@
+.login-form label{
+  font-size: 25px;
+}
+
+.login-form button {
+  margin: 10px;
+  width: 100px;
+  height: 50px;
+ background-color: #7F7F7F;
+ border-radius: 8px;
+ color: white;
+ font-size: 20px;
+}
+
+[type*="text"], [type*="password"]{
+  width: 30%;
+  height: 25px;
+  border-radius: 15px;
+  outline: none;
+  padding: 6px;
+  font-size: 25px;
+}
