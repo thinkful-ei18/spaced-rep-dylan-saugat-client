@@ -5,12 +5,8 @@ import {Route, withRouter} from 'react-router-dom';
 import HeaderBar from './header-bar';
 import LandingPage from './landing-page';
 import Dashboard from './dashboard';
-<<<<<<< HEAD
 import RegistrationPage from './Registration/registration-page';
-=======
-import RegistrationPage from './Registration/Registration-page';
 import InfoHome from './InfoHome';
->>>>>>> e5badbbd51b5521284e302ce2c9ba7e1f1078dfd
 import {refreshAuthToken} from '../actions/auth';
 
 export class App extends React.Component {

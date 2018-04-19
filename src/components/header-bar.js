@@ -15,10 +15,11 @@ export class HeaderBar extends React.Component {
 
   render() {
     // Only render the log out button if we are logged in
-    let logOutButton;
+    let logOutButton = null;
     if (this.props.loggedIn) {
       logOutButton = <button onClick={() => this.logOut()}>Log out</button>;
     }
+    
     return (
       <nav className="nav-bar">
         <ul className="nav">
@@ -28,7 +29,11 @@ export class HeaderBar extends React.Component {
           <li>{this.props.loggedIn ? <Link to="/dashboard" className="nav-item">Learn
               </Link>: null}
           </li>
-          <li><a className="nav-item nav-button" > {logOutButton} </a> </li>
+          <li>
+            {this.props.loggedIn ? null:<Link to="/register" className="nav-item">Sign Up</Link>
+               }
+            </li>
+          <li><a className="nav-item nav-button" style={this.props.loggedIn ? {display:"inline"} : {display:"none"}} > {logOutButton} </a> </li>
         </ul>
       </nav>
     );
