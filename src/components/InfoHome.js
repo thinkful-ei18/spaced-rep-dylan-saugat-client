@@ -2,7 +2,7 @@
 import './infohome.css'
  const InfoHome = () => {
   return(
-    <div className="info-container"> 
+    <div className="info-container" role="main"> 
     <h1>Ever wondered how dragons communicate with each other?</h1>
     <p>Now you can learn Dovah-Zul, the language of these magnificent beasts.</p>
     <div className="info-progression">

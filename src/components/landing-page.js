@@ -13,8 +13,8 @@ export function LandingPage(props) {
     return <Redirect to="/dashboard" />;
   }
 
-  return <div className="landing-page">
-      <h2>Spaced Repition: Learn Dragon Language</h2>
+  return <div className="landing-page" role="main">
+      <h1>Spaced Repition: Learn Dragon Language</h1>
 
       <Tabs>
         <TabList>
