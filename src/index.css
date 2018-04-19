@@ -7,6 +7,12 @@ body {
   box-sizing: border-box;
 }
 
+.form-error {
+  color: white;
+ padding-right: 15px;
+  display: inline;
+}
+
 @font-face{ 
 	font-family: 'Dragon Alphabet';
 	src:
@@ -14,3 +20,4 @@ body {
        url('dov3_th9m-webfont.woff2') format('woff2'),
 	     url('dov3_th9m-webfont.ttf') format('truetype')
 }
+
