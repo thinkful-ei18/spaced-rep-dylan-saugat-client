@@ -59,7 +59,6 @@ export class Dashboard extends React.Component {
     let mValueJSX = <p className="dragon-item">
         This card is currently at level {this.props.protectedData.mValue}
       </p>;
-    console.log('Game feebdack', feedback)
     if (feedback.feedback === 'Correct') {
       mValueJSX = <p className="dragon-item">
           This card is currently at level{' '}
