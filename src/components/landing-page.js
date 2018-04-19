@@ -31,9 +31,6 @@ export function LandingPage(props) {
           <LoginForm />
         </TabPanel>
       </Tabs>
-      <p className="app-overview">
-        Now is your chance to learn dragon language
-      </p>
       <div className="app-info">
         <img className="app-img" src={skyrimLogo} alt="logo" />
       </div>

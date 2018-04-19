@@ -8,10 +8,8 @@ import {
 } from '../actions/protected-data';
 import { setAnswer, resetGame } from '../actions/game';
 import './dashboard.css';
-import dragonImage from './images/dragon.svg'
+import dragonImage from './images/dragon.svg';
 export class Dashboard extends React.Component {
-
-
   componentDidMount() {
     this.props.dispatch(fetchProtectedData());
   }
@@ -34,38 +32,66 @@ export class Dashboard extends React.Component {
 
   renderNextButton() {
     return (
-      <button type="button" onClick={() => this.props.dispatch(fetchProtectedData())}>
+      <button
+      className="submit-btn"
+        type="button"
+        onClick={() => this.props.dispatch(fetchProtectedData())}
+      >
         NEXT!
       </button>
     );
   }
 
-
   render() {
-      const feedback = this.props.feedback.feedback ? this.props.feedback : this.props.protectedData;
-
-       const dragonItemStyle = {
-        'borderRight': '4px solid blue'
-      }
+    const feedback = this.props.feedback.feedback
+      ? this.props.feedback
+      : this.props.protectedData;
+    const correctAnswer = this.props.feedback.answer ? (
+      <p className="dragon-item">The answer is {feedback.answer}</p>
+    ) : (
+      ''
+    );
+    const gameFeedback = feedback.feedback ? (
+      <p className="dragon-item">{feedback.feedback}!</p>
+    ) : (
+      ''
+    );
+    let mValueJSX = <p className="dragon-item">
+        This card is currently at level {this.props.protectedData.mValue}
+      </p>;
+    console.log('Game feebdack', gameFeedback)
+    if (gameFeedback === 'Correct') {
+      mValueJSX = <p className="dragon-item">
+          This card is currently at level{' '}
+          {this.props.protectedData.mValue + 1}
+        </p>;
+    } else if (gameFeedback === 'Incorrect') {
+      mValueJSX = <p className="dragon-item">
+        This card is currently at level 1
+      </p>;
+    }
     return <div className="dashboard">
-
         <div className="dashboard-question">
-          <h4 className="dragon-item" style={dragonItemStyle}>{this.props.protectedData.question}</h4>
-          <h5 className="dragon">{this.props.protectedData.dragonAnswer}</h5>
-          <h5 className="dragon-item" style={dragonItemStyle} >Attempts {feedback.attempts}</h5>
-          <h5 className="dragon-item" style={dragonItemStyle}>
+          <h4 className="dragon-item">
+            {this.props.protectedData.question}
+          </h4>
+          <p className="dragon">{this.props.protectedData.dragonAnswer}</p>
+          {gameFeedback}
+          {correctAnswer}
+          <p className="dragon-item">Attempts {feedback.attempts}</p>
+          <p className="dragon-item">
             Correct Attempts {feedback.correctAttempts}
-          </h5>
-          <h5 className="dragon-item" style={dragonItemStyle} >
+          </p>
+          <p className="dragon-item">
             Percent correct{' '}
-            {feedback.attempts === 0? 0 :feedback.correctAttempts /
-              feedback.attempts *
-              100}%
-          </h5>
-          <h5>{feedback.feedback}</h5>
-          {/* {console.log(this.props.protectedData.id)} */}
+            {feedback.attempts === 0
+              ? 0
+              : feedback.correctAttempts / feedback.attempts * 100}%
+          </p>
+          {mValueJSX}
+
           <form onSubmit={e => this.answerSubmitHandler(e, this.props.currentAnswer)}>
-           { feedback === this.props.feedback ? null : <input className="answer-input" type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} /> }
+            {feedback === this.props.feedback ? null : <input className="answer-input" type="text" name="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />}
             {/* {console.log(this.props.feedback.feedback)} */}
             {this.props.feedback.feedback === 'Correct' || this.props.feedback.feedback === 'Incorrect' ? this.renderNextButton() : <button className="submit-btn" type="submit">
                 submit answer
@@ -73,14 +99,13 @@ export class Dashboard extends React.Component {
           </form>
         </div>
         <div className="dashboard-bottom">
-        <img className="left-dragon" src={dragonImage} alt="dragon"/>
-        <div className="progress-bar-container">
-
-          <Circle className="progress-" percent={this.props.session.correctAttempts / this.props.session.attempts * 100} strokeWidth="4" strokeColor="green" />
-          <h4>{this.props.session.correctAttempts}</h4>
-          <h4>{this.props.session.attempts}</h4>
-        </div>
-        <img src={dragonImage} alt="dragon"/>
+          <img className="left-dragon" src={dragonImage} alt="dragon" />
+          <div className="progress-bar-container">
+            <Circle className="progress-" percent={this.props.session.correctAttempts / this.props.session.attempts * 100} strokeWidth="4" strokeColor="green" />
+            <h4>{this.props.session.correctAttempts}</h4>
+            <h4>{this.props.session.attempts}</h4>
+          </div>
+          <img src={dragonImage} alt="dragon" />
         </div>
       </div>;
   }

@@ -1,3 +1,8 @@
+.login-form {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 .login-form label{
   font-size: 25px;
 }
@@ -12,11 +17,13 @@
  font-size: 20px;
 }
 
-[type*="text"], [type*="password"]{
-  width: 30%;
+.login-form input{
+  width: 80%;
   height: 25px;
   border-radius: 15px;
   outline: none;
   padding: 6px;
   font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
