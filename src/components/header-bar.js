@@ -30,7 +30,7 @@ export class HeaderBar extends React.Component {
               </Link>: null}
           </li>
           <li>
-            {this.props.loggedIn ? null:<Link to="/register" className="nav-item">Sign Up</Link>
+            {this.props.loggedIn ? null:<Link to="/" className="nav-item">Sign Up</Link>
                }
             </li>
           <li><a className="nav-item nav-button" style={this.props.loggedIn ? {display:"inline"} : {display:"none"}} > {logOutButton} </a> </li>
