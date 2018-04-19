@@ -57,16 +57,16 @@ export class Dashboard extends React.Component {
       ''
     );
     let mValueJSX = <p className="dragon-item">
-        This card is currently at level {this.props.protectedData.mValue}
+        This card is currently at level: {this.props.protectedData.mValue}
       </p>;
     if (feedback.feedback === 'Correct') {
       mValueJSX = <p className="dragon-item">
-          This card is currently at level{' '}
+          This card is currently at level:{' '}
           {this.props.protectedData.mValue + 1}
         </p>;
     } else if (feedback.feedback === 'Incorrect') {
       mValueJSX = <p className="dragon-item">
-        This card is currently at level 1
+        This card is currently at level: 1
       </p>;
     }
     return <div className="dashboard">
@@ -77,12 +77,12 @@ export class Dashboard extends React.Component {
           <p className="dragon">{this.props.protectedData.dragonAnswer}</p>
           {gameFeedback}
           {correctAnswer}
-          <p className="dragon-item">Attempts {feedback.attempts}</p>
+          <p className="dragon-item">Attempts on this word: {feedback.attempts}</p>
           <p className="dragon-item">
-            Correct Attempts {feedback.correctAttempts}
+            Correct Attempts on this word: {feedback.correctAttempts}
           </p>
           <p className="dragon-item">
-            Percent correct{' '}
+            Percent correct:{' '}
             {feedback.attempts === 0
               ? 0
               : feedback.correctAttempts / feedback.attempts * 100}%
