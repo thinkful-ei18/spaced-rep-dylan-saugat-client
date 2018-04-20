@@ -53,7 +53,7 @@ export class Dashboard extends React.Component {
       ''
     );
     const gameFeedback = feedback.feedback ? (
-      <p className="dragon-item">{feedback.feedback}!</p>
+      <p className="dragon-item answer-status">{feedback.feedback}!</p>
     ) : (
       ''
     );
@@ -93,7 +93,7 @@ export class Dashboard extends React.Component {
           {mValueJSX}
 
           <form onSubmit={e => this.answerSubmitHandler(e, this.props.currentAnswer)}>
-            {feedback === this.props.feedback ? null : <label htmlFor="answer" className="dragon-item">
+            {feedback === this.props.feedback ? null : <label htmlFor="answer" className="dragon-item answer-label">
                 Answer<input autoFocus className="answer-input" type="text" name="answer" title="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />
               </label>}
             {/* {console.log(this.props.feedback.feedback)} */}

@@ -1,9 +1,9 @@
 .info-container{
 margin: 0 auto;
 text-align: center;  
-background-color: black;
+background-color: #5A7A6E;
 padding: 20px;
-height: 100vh;
+
 }
 
 .info-container h1 {
@@ -18,7 +18,7 @@ p{
 
 .f-pg p {
   font-size: 28px;
- color: black;
+  color: white;
 }
 
 .f-pg {
@@ -28,8 +28,9 @@ p{
 
 .info-progression {
 margin-top: 200px;  
-background-color: white;
+background-color: #31545A;
 padding-top: 40px;
 padding-bottom: 25px;
+color: white;
 }
 

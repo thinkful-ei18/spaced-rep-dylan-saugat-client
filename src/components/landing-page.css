@@ -1,7 +1,7 @@
 .landing-page{
   margin: 0 auto;
   text-align: center;
-  background-color: black;
+  background-color: #5A7A6E;
 }
 
 .landing-page h1 {
@@ -21,7 +21,7 @@
   color: white;
 }
 .app-info{
-  color: white;
+  background-color: #31545A;
  padding: 20px;
 }
 .app-info h5{
@@ -42,3 +42,6 @@
 .skyrim-logo {
   width: 200px;
 }
+
+/* background-color: #5A7A6E;
+background-color: #31545A; */
