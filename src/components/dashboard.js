@@ -105,15 +105,15 @@ export class Dashboard extends React.Component {
         <div className="dashboard-bottom">
           <img className="left-dragon" src={dragonImage} alt="dragon" />
           <div className="progress-bar-container">
-            <Circle className="progress-bar" percent={Math.floor(this.props.session.correctAttempts / this.props.session.attempts * 100)} strokeWidth="4" strokeColor="green" />
-            <p className="dragon-item">
+            <Circle className="progress-bar" percent={Math.floor(this.props.session.correctAttempts / this.props.session.attempts * 100)} strokeWidth="4" strokeColor="black" />
+            <p className="dragon-item btm-dash-item">
               Correct attempts this session:{' '}
               {this.props.session.correctAttempts}
             </p>
-            <p className="dragon-item">
+            <p className="dragon-item btm-dash-item">
               Attempts this session: {this.props.session.attempts}
             </p>
-            <p className="dragon-item">
+            <p className="dragon-item btm-dash-item">
               Session percent:{' '}
               {this.props.session.attempts === 0
                 ? 0

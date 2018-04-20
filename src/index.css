@@ -8,9 +8,10 @@ body {
 }
 
 .form-error {
-  color: white;
+  color: red;
  padding-right: 15px;
   display: inline;
+  margin-left: 15px;
 }
 
 @font-face{ 
