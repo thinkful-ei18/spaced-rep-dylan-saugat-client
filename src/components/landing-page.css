@@ -1,36 +1,44 @@
 .landing-page{
   margin: 0 auto;
   text-align: center;
+  background-color: black;
 }
 
 .landing-page h1 {
-  background-color: #97CAEF;
+
   padding: 25px;
   margin: 0;
   font-size: 35px;
+  color: white;
  
 }
 
 .landing-page h2 {
-  background-color: #97CAEF;
+
   padding: 25px;
   margin: 0;
   font-size: 30px;
- 
+  color: white;
 }
 .app-info{
- background-color: #E27D60;
+  color: white;
  padding: 20px;
 }
 .app-info h5{
   padding-top: 20px;
   font-size: 24px;
+  color: white;
 }
 
 .app-info p {
   font-size: 25px;
+  color: white;
 }
 
 .app-info img {
   width: 100px;
+}
+
+.skyrim-logo {
+  width: 200px;
 }

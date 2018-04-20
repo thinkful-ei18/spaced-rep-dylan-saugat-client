@@ -1,4 +1,7 @@
  import React from 'react'
+
+ import skyrimLogo from './images/logo.png';
+
 import './infohome.css'
  const InfoHome = () => {
   return(
@@ -22,6 +25,7 @@ import './infohome.css'
     </i>
     <p>Memorize</p>
     </div>
+    <img className="skyrim-logo" src={skyrimLogo} alt="logo"/>
     </div>
     </div>
   );

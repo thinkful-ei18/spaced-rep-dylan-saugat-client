@@ -1,5 +1,6 @@
 .progress-bar {
   width: 50%;
+  
 }
 
 .dashboard {
@@ -9,7 +10,8 @@
 }
 
 .dashboard-question {
-  background-color: #E27D60;
+  background-color: black;
+  color: white;
 }
 
 .dragon-item{
@@ -36,7 +38,12 @@ padding: 10px;
 }
 
 .dashboard-bottom{
-  background-color: #97CAEF;
+  background-color: white;
+  color: black;
+}
+
+.btm-dash-item{
+  color: black;  
 }
 
 .answer-input {

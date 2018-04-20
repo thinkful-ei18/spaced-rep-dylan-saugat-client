@@ -10,6 +10,8 @@
   font-weight: bold;
   padding-bottom: 10px;
   float: none;
+  background-color: grey;
+  
 }
 
 .react-tabs__tab--selected {
@@ -17,6 +19,7 @@
   border-color: #aaa;
   color: black;
   border-radius: 5px 5px 0 0;
+  background-color: white;
 }
 
 .react-tabs__tab:focus {
@@ -54,5 +57,5 @@ padding-top: 40px
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
-  background-color: #97CAEF;
+  background-color: black;
 }
