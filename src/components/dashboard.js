@@ -88,7 +88,7 @@ export class Dashboard extends React.Component {
             Percent correct:{' '}
             {feedback.attempts === 0
               ? 0
-              : feedback.correctAttempts / feedback.attempts * 100}%
+              : Math.floor(feedback.correctAttempts / feedback.attempts * 100)}%
           </p>
           {mValueJSX}
 
@@ -105,7 +105,7 @@ export class Dashboard extends React.Component {
         <div className="dashboard-bottom">
           <img className="left-dragon" src={dragonImage} alt="dragon" />
           <div className="progress-bar-container">
-            <Circle className="progress-bar" percent={this.props.session.correctAttempts / this.props.session.attempts * 100} strokeWidth="4" strokeColor="green" />
+            <Circle className="progress-bar" percent={Math.floor(this.props.session.correctAttempts / this.props.session.attempts * 100)} strokeWidth="4" strokeColor="green" />
             <p className="dragon-item">
               Correct attempts this session:{' '}
               {this.props.session.correctAttempts}
