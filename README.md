@@ -1,3 +1,9 @@
+Server repo: https://github.com/thinkful-ei18/spaced-rep-dylan-saugat-server
+
+Live app: http://mystifying-goldwasser-1d6115.netlify.com/
+ 
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
