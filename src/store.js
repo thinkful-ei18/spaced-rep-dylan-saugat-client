@@ -12,8 +12,6 @@ let enhancers;
 
 
 if (process.env.NODE_ENV === 'development') {
-    const { createLogger } = require('redux-logger');
-    middlewares.push(createLogger());
   
     enhancers = compose(
       applyMiddleware(...middlewares),
