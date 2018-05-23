@@ -13,6 +13,13 @@ export class HeaderBar extends React.Component {
   }
 
   render() {
+    // Only render the log out button if we are logged in
+    let logOutButton = null;
+    if (this.props.loggedIn) {
+      logOutButton = <span className="nav-item nav-button" >
+          Log out
+        </span>;
+    }
     
     return <nav className="nav-bar">
         <ul className="nav">
