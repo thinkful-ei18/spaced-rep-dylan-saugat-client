@@ -11,7 +11,7 @@
   padding-bottom: 10px;
   float: none;
   border-radius: 5px 5px 0 0;
-  color: white;
+  color: 	#fffafa;
 }
 
 .react-tabs__tab--selected {
@@ -19,7 +19,7 @@
   border-color: #aaa;
   color: black;
   border-radius: 5px 5px 0 0;
-  color: white;
+  color: 	#fffafa;
 
 }
 
@@ -58,5 +58,5 @@ padding-top: 40px
   padding-left: 0;
   margin-top: 0;
   margin-bottom: 0;
-  background-color: #5A7A6E;
+  background-color: #141851;
 }

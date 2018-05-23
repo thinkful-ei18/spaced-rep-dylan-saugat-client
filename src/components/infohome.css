@@ -1,24 +1,29 @@
 .info-container{
 margin: 0 auto;
 text-align: center;  
-background-color: #5A7A6E;
+background-color: #72a2f4;
 padding: 20px;
-
+display: grid;
+grid-template-columns: 33% 67%;
+grid-template-areas: "header header"
+                     "image description"
+                     "info info"
 }
 
 .info-container h1 {
   font-size: 40px;
-  color: white;
+  color: 	#fffafa;
+  grid-area: header;
 }
 
 p{
-  color: white;
+  color: 	#fffafa;
   font-size: 28px;
 }
 
 .f-pg p {
   font-size: 28px;
-  color: white;
+  color: 	#fffafa;
 }
 
 .f-pg {
@@ -27,10 +32,22 @@ p{
 }
 
 .info-progression {
-margin-top: 200px;  
-background-color: #31545A;
+margin-top: 25px;  
+background-color: #141851;
 padding-top: 40px;
 padding-bottom: 25px;
-color: white;
+color: 	#fffafa;
+grid-area: info;
 }
 
+.home {
+  grid-area: image;
+  width: 100%;
+  height: auto;
+}
+
+.app-description {
+  margin-top: 0;
+  text-align: left;
+  grid-area: description
+}

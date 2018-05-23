@@ -1,7 +1,7 @@
 .landing-page{
   margin: 0 auto;
   text-align: center;
-  background-color: #5A7A6E;
+  background-color: #72a2f4;
 }
 
 .landing-page h1 {
@@ -9,7 +9,7 @@
   padding: 25px;
   margin: 0;
   font-size: 35px;
-  color: white;
+  color: 	#fffafa;
  
 }
 
@@ -18,29 +18,25 @@
   padding: 25px;
   margin: 0;
   font-size: 30px;
-  color: white;
+  color: 	#fffafa;
 }
 .app-info{
-  background-color: #31545A;
+  background-color: #141851;
  padding: 20px;
 }
 .app-info h5{
   padding-top: 20px;
   font-size: 24px;
-  color: white;
+  color: 	#fffafa;
 }
 
 .app-info p {
   font-size: 25px;
-  color: white;
+  color: 	#fffafa;
 }
 
 .app-info img {
   width: 100px;
-}
-
-.skyrim-logo {
-  width: 200px;
 }
 
 /* background-color: #5A7A6E;

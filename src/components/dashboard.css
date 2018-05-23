@@ -16,14 +16,14 @@
   background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #5A7A6E;
+    background-color: #72a2f4;
 }
 
 .dragon-item{
 font-size: 30px;
 display: block;
 margin: 10px;
-color: white;
+color: 	#fffafa;
 padding: 10px;
 font-weight: bold;
 
@@ -50,22 +50,22 @@ font-weight: bold;
   margin-top: 15px;
   margin-bottom: 50px;
   margin-left: 25px;
-  color: white;
+  color: 	#fffafa;
 }
 
 
 .btm-dash-item{
-  color: white;
+  color: 	#fffafa;
 }
 
 
 .dashboard-bottom{
-  background-color: white;
+  background-color: 	#fffafa;
   color: black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #31545A;
+  background-color: 		#b6a292;
 }
 
 
