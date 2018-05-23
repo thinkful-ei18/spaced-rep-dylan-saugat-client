@@ -27,9 +27,7 @@ export class LoginForm extends React.Component {
                     this.onSubmit(values)
                 )}>
                 {error}
-                <h4>Example User</h4>
-                <p>Email: bob@bob.com</p>
-                <p>Password: thepriceisright</p>
+            
                 <Field
                 className="email-field"
                     component={Input}

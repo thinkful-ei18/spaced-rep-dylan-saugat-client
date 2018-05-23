@@ -44,6 +44,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
     .then(res => normalizeResponseErrors(res))
     .then(res => res.json())
     .then(data => {
+      console.log(data);
       dispatch(fetchProtectedDataSuccess(data));
     })
     .catch(err => {
@@ -54,6 +55,7 @@ export const fetchProtectedData = () => (dispatch, getState) => {
 export const verifyAnswerStatus = ans => (dispatch, getState) => {
 dispatch(verifyAnswerRequest())
   const authToken = getState().auth.authToken;
+  console.log(JSON.stringify(ans));
   return fetch(`${API_BASE_URL}/questions`, {
     method: 'POST',
     headers: {
