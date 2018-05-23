@@ -1,9 +1,10 @@
 .login-form {
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: white;
+  background-color: 	#fffafa;
   width: 100%;
   padding-right: 15%;
+  color: #5a3f28;
 }
 
 .form-input {
@@ -25,7 +26,7 @@
   height: 50px;
  background-color: rgb(102, 102, 102);
  border-radius: 8px;
- color: white;
+ color: 	#fffafa;
  font-size: 20px;
 }
 

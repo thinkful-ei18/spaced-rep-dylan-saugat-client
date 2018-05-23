@@ -1,5 +1,5 @@
 .nav {
-  background: grey;
+  background: #b6a292;
   list-style-type: none;
   overflow: hidden;
   margin-bottom: 0;
@@ -11,7 +11,7 @@ ul li{
 
 li .nav-item {
   display: block;
-  color: white;
+  color: 	#fffafa;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;

@@ -1,8 +1,13 @@
 .login-form {
-  background-color: #E27D60
+  background-color: #E27D60;
+  color: #5a3f28;
 }
 
 .email-label, .pass-label  {
   font-size: 25px;
 
+}
+
+.login-form p {
+  color: #5a3f28;
 }

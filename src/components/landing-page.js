@@ -6,6 +6,7 @@ import LoginForm from './Login/Login-form';
 import skyrimLogo from './images/logo.png';
 import RegistrationForm from './Registration/registration-form';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import InfoHome from './InfoHome';
 import './react-tabs.css';
 export function LandingPage(props) {
   // If we are logged in redirect straight to the user's dashboard
@@ -14,7 +15,7 @@ export function LandingPage(props) {
   }
 
   return <div className="landing-page" role="main">
-      <h1>Spaced Repition: Learn Dragon Language</h1>
+      <InfoHome />
 
       <Tabs>
         <TabList>
