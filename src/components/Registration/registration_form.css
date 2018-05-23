@@ -2,16 +2,21 @@
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: white;
- display: inline-block;
- width: 100%;
-padding-right: 15%;
+  width: 100%;
+  padding-right: 15%;
 }
 
+.form-input {
+  display: grid;
+  grid-template-columns: 33% 67%;
+}
 
 .login-form label{
   font-size: 25px;
   text-align: right;
-  width: 15%;
+  width: 100%;
+  grid-column: 1;
+  transform: translateY(25%);
 }
 
 .login-form button {
@@ -25,7 +30,7 @@ padding-right: 15%;
 }
 
 .login-form input{
-  width: 50%;
+  width: 80%;
   height: 25px;
   border-radius: 15px;
   outline: none;
@@ -34,6 +39,7 @@ padding-right: 15%;
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 25px;
+  grid-column: 2;
 }
 
 .login-form input:focus{
@@ -44,3 +50,22 @@ padding-right: 15%;
   color: black;
 }
 
+
+@media screen and (max-width: 600px) {
+  .form-input {
+    display: block;
+  }
+
+  .login-form label {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    width: 80%;
+  }
+
+  .login-form input {
+    margin-left: 0;
+    width: 80%;
+  }
+}

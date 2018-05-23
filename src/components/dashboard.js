@@ -96,7 +96,6 @@ export class Dashboard extends React.Component {
             {feedback === this.props.feedback ? null : <label htmlFor="answer" className="dragon-item answer-label">
                 Answer<input autoFocus className="answer-input" type="text" name="answer" title="answer" value={this.props.currentAnswer} onChange={this.handleAnswerInput} />
               </label>}
-            {/* {console.log(this.props.feedback.feedback)} */}
             {this.props.feedback.feedback === 'Correct' || this.props.feedback.feedback === 'Incorrect' ? this.renderNextButton() : <button className="submit-btn" type="submit">
                 submit answer
               </button>}
